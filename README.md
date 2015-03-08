@@ -29,6 +29,7 @@ Setup Goals
 
 Gotchas
 -------
+- I won't be using a fully integrated desktop environment, but if you do, some things might be easier
 - With the base configuration described here, your touchpad will click on tap, right-click on triple-finger-tap, and paste on double-finger-tap
 - I won't delve *too* deep into making the environment look pretty here. Stuff like making the terminal colors nicer, mouse cursor, etc is left out for the mostpart
 - Some of my configuration can be found in `config/`, but remember that these might have become incompatible/outdated when you read this
@@ -77,7 +78,7 @@ Install
 * The normal installation procedure follows, except that we don't configure any bootstrapping at all(no GRUB, etc)
 * Use `gdisk` to add your partitions. I wanted a simple scheme with a root, swap and home partition.
 * Exit gdisk and perform your formatting / swap magic. For me, using btrfs and a swap, the end result:
-<pre>
+<pre><code>
 [gammy@lucia ~]$ lsblk -f
 NAME   FSTYPE  LABEL       UUID                                 MOUNTPOINT
 sda                                                             
@@ -87,7 +88,7 @@ sda
 ├─sda4 swap                62dcdd3f-f6ee-4a00-9475-9c962cf602d6 [SWAP]
 ├─sda5 btrfs               09a733ec-3894-4b8b-b32f-7d63f2a0dd82 /
 └─sda6 btrfs               42a1f9fc-1c1b-4781-91f0-decec3ed51ce /home
-</pre>
+</code></pre>
 * Continue the install as usual (`loadkeys`, `mount`, `swapon`, `pacstrap`, `arch-chroot`, `mkinicpio`, etc)
 
 Post-Install
