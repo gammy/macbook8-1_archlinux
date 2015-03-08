@@ -109,13 +109,14 @@ Post-Install
 * Install xorg basics
  * `pacman -S` `xorg-server` `xorg-server-utils` `xorg-apps` `xorg-xinit` `xorg-xev` `extra/xf86-video-intel` `extra/xf86-input-synaptics` `ttf-dejavu`
  * (Note that we optionally replace `xf86-input-synaptics` with the unofficial `xf86-input-mtrack` later, to utilize more features of the trackpad)
-* Install a grapical login manager, and enable it (but don't start it)
+* Install a grapical login manager
  * `pacman -S` `lightdm` `lightdm-gtk3-greeter` 
- * Edit `/etc/lightdm/lightdm.conf` so that `greeter-session` under `SeatDefaults` is set to `lightdm-gtk-greeter` (yes, *not* gtk3, but gtk)
  * `systemctl enable lightdm`
+ * Edit `/etc/lightdm/lightdm.conf` so that `greeter-session` under `SeatDefaults` is set to `lightdm-gtk-greeter` (yes, *not* gtk3, but gtk)
 * Install the wicd network connection manager
  * `pacman -S` `wicd` 
  - `systemctl enable wicd`
+ - (Usually you can configure the network here by running `wicd-curses`, but it crashes when I select a network to configure. Maybe the experimental b43 driver does not provide something which wicd-curses wants - something which wicd-gtk handles, however..)
 * Install pulseaudio
  * `pacman -S` `pulseaudio` `pulseaudio-alsa` `pavucontrol` 
 * And some miscellaneous stuff to ones own taste
