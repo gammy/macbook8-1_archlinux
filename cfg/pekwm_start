@@ -1,0 +1,71 @@
+export XAUTHORITY=~/.Xauthority
+source $HOME/.bashrc
+
+# Prepend font paths to X font list
+xset +fp /usr/share/fonts/TTF/
+
+# Resolutions/Screen ###########################################################
+#xrandr --output HDMI1 --auto --output LVDS1 --auto 
+#xrandr --auto
+#nvidia-settings --load-config-only # Useless, does nothing :(
+# The displays are instead set up from /etc/X11/xorg.conf.d/20-nvidia.conf
+# "Dramatic browser performance boost", https://wiki.archlinux.org/index.php/NVIDIA#GUI:_nvidia-settings: 
+
+# DPMS (Power Management) configuration
+# The three parameters are, in seconds, 'standby', 'suspend', 'off' (0 = disabled)
+xset dpms 0 0 180 &
+
+# Desktop background ###########################################################
+# xsetroot -solid black &
+#feh --bg-fill $HOME/Pictures/wallpapers/slack_dark_grey.png
+
+# Keyboard / Mouse #############################################################
+# Silence bell
+xset b off &
+# Keyboard
+xset r rate 300 45 &
+setxkbmap -geometry "pc(pc105)" 
+synclient RTCornerButton=0 \
+          RBCornerButton=0 \
+	  LTCornerButton=0 \
+	  LBCornerButton=0 \
+	  PalmDetect=1
+#xmodmap $HOME/.Xmodmap &
+
+# Mouse
+#xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Edge Scrolling" 1 1 1 &
+#xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Move Speed" 1 10 0.05 40 & # min max accel trackstick
+#fix_keyb_mouse &
+
+# Panel ########################################################################
+#dzenstatus_pipe | dzen2 -bg black -fg grey -w 270 -x 1096 -ta r &
+#xfce4-panel &
+lxpanel &
+#tint2 &
+#stalonetray > /tmp/stalonetray.log 2>&1 & # Fucking HORRIBLE program
+
+# Panel docks ##################################################################
+#xfce4-power-manager & # Battery / AC
+#wicd-gtk &            # Network
+volti &               # Volume
+
+# Autostart some apps ##########################################################
+pulseaudio --start
+devmon --info-on-mount &
+#mpd &
+#gmpc &
+urxvt -fn fixed +sb -bg "#202020" -fg white &
+#/opt/firefox/firefox &
+#xload &
+#journalctlf &
+#topf &
+#thunderbird &
+#ekiga &
+tilda &
+#xsnow &
+#xpad &
+
+#killall nzbget
+#nzbget --daemon
+redshift -l "59.3294:18.0686" &
+xscreensaver -nosplash &
