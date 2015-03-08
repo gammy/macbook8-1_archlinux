@@ -41,6 +41,7 @@ Working
 -------
 * Video
 * Audio (Builtin speakers, audio jack analog)
+* Webcam
 * Ethernet
 * WiFi
 * Software Suspend
