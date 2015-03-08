@@ -29,6 +29,10 @@ Setup Goals
 - Install arch via Live USB stick and internet (wired; wireless might be problematic, see below)
 - For linux to run better than OS X itself
 
+Where we Are
+------------
+It works, although there is a lot to tweak and configure. The touchpad is particularly iffy so far.
+
 Gotchas
 -------
 - With the base configuration described here, your touchpad will click on tap, right-click on triple-finger-tap, and paste on double-finger-tap *AHEM* actually that isn't true once you're using the mtrack driver. TODO.
@@ -46,20 +50,22 @@ Working
 * Audio (Builtin speakers, audio jack analog)
 * Webcam
 * Ethernet
+* CD
 * Multitouch (using `mtrack`)
 * WiFi
 * Software Suspend
 * Display brightness control
 * Multimedia keys: the following work/identify correctly out of the box: `XF86MonBrightnessDown` `XF86MonBrightnessUp` `XF86LaunchA` `XF86LaunchB` `XF86KbdBrightnessUp` `XF86KbdBrightnessDown` `XF86AudioPrev` `XF86AudioPlay` `XF86AudioNext` `XF86AudioMute` `XF86Eject`. I bound some of these keys to scripts I've written. See http://github.com/gammy/misc-scripts.git
+- IR Remote (haven't verified all buttons though; up and down buttons seem special)
 
 Work in progress
 ----------------
 - The volume up / down buttons, which ought to trigger `XF86AudioLowerVolume` and `XF86AudioRaiseVolume`, don't even trigger scan/keycodes (`xev`), so I can't use them at all at the moment.
 - An unresolved problem is how to utilize the keyboard LED brightness keys. The only way I can currently configure the brightness is by writing to `/sys/`, which requires root priveleges. The only way I can think of is to handle the key events via the acpi handler (ie `/etc/acpi/handler.sh`), but these keys don't trigger acpi events!
 - Touchpad / Multitouch: It's currently quite twitchy. I haven't figured out a scheme for emulating the standard X resize method (CTRL+right-drag), since there is no right button. 
-
 Untested
 --------
+- Thunderbolt...?
 - Bluetooth
 - SPDIF audio 
 
