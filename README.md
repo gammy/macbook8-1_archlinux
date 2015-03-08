@@ -31,8 +31,8 @@ Setup Goals
 
 Gotchas
 -------
+- With the base configuration described here, your touchpad will click on tap, right-click on triple-finger-tap, and paste on double-finger-tap *AHEM* actually that isn't true once you're using the mtrack driver. TODO.
 - I won't be using a fully integrated desktop environment, but if you do, some things might be easier
-- With the base configuration described here, your touchpad will click on tap, right-click on triple-finger-tap, and paste on double-finger-tap
 - I won't delve *too* deep into making the environment look pretty here. Stuff like making the terminal colors nicer, mouse cursor, etc is left out for the mostpart
 - Some of my configuration can be found in `config/`, but remember that these might have become incompatible/outdated when you read this
 - I install pulseaudio but don't show how I start it. This is just in my window manager:s startup script. The same goes for devmon and so on
