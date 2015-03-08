@@ -68,7 +68,7 @@ Work in progress
 ----------------
 - The volume up / down buttons, which ought to trigger `XF86AudioLowerVolume` and `XF86AudioRaiseVolume`, don't even trigger scan/keycodes (`xev`), so I can't use them at all at the moment.
 - An unresolved problem is how to utilize the keyboard LED brightness keys. The only way I can currently configure the brightness is by writing to `/sys/`, which requires root priveleges. The only way I can think of is to handle the key events via the acpi handler (ie `/etc/acpi/handler.sh`), but these keys don't trigger acpi events!
-- Touchpad / Multitouch: It's currently quite twitchy. I haven't figured out a scheme for emulating the standard X resize method (CTRL+right-drag), since there is no right button. 
+- Touchpad / Multitouch: It's not perfectly configured yet, but is almost there :)
 Untested
 --------
 - Thunderbolt...?
