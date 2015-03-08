@@ -1,0 +1,39 @@
+xrdb -merge -load: ~/.Xdefaults
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+! hintstyle options: hintnone, hintslight, hintmedium, hintfull
+Xft.hintstyle: hintfull
+Xft.rgba: rbg
+Xcursor.theme: whiteglass
+Xcursor.size: 15
+URxvt*color0: #000000
+URxvt*color1: #992222
+URxvt*color2: #119911
+URxvt*color3: #cc6600
+URxvt*color4: #3333cc
+URxvt*color5: #990099
+URxvt*color6: #009999
+URxvt*color7: #cccccc
+URxvt*color8: #666666
+URxvt*color9: #ff6666
+URxvt*color10: #66ff66
+URxvt*color11: #ffff66
+URxvt*color12: #6666ff
+URxvt*color13: #ff66ff
+URxvt*color14: #66ffff
+URxvt*ccolor15: #ffffff
+URxvt*multichar_encoding: eucj
+URxvt*termName: rxvt
+!URxvt.perl-ext-common: tabbed,default
+URxvt.tabbed.tabbar-fg: 8
+URxvt.tabbed.tabbar-bg: -1
+URxvt.tabbed.tab-fg:    15
+URxvt.tabbed.tab-bg:    -1
+!URxvt.font:xft:monospace:size=8:antialias=true:hinting=true
+!URxvt.letterSpace:-1
+URxvt*scrollBar: false
+URxvt*foreground: White
+URxvt*background: #202020
+URxvt*saveLines: 12000
+!URxvt*iconFile: /usr/share/icons/gnome/32x32/apps/xfce-terminal.png
