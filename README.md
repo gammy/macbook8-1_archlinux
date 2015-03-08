@@ -10,6 +10,8 @@ Resources
 * Touchpad
  - http://community.linuxmint.com/tutorial/view/1361
  - https://web.archive.org/web/20150210065444/http://uselessuseofcat.com/?p=74
+ - https://github.com/BlueDragonX/xf86-input-mtrack
+
 * Uncategorized:
  - https://wiki.archlinux.org/index.php/MacBook
  - https://wiki.archlinux.org/index.php/MacBook#OS_X_with_Arch_Linux
@@ -33,6 +35,7 @@ Gotchas
 - With the base configuration described here, your touchpad will click on tap, right-click on triple-finger-tap, and paste on double-finger-tap
 - I won't delve *too* deep into making the environment look pretty here. Stuff like making the terminal colors nicer, mouse cursor, etc is left out for the mostpart
 - Some of my configuration can be found in `config/`, but remember that these might have become incompatible/outdated when you read this
+- I install pulseaudio but don't show how I start it. This is just in my window manager:s startup script. The same goes for devmon and so on
 
 Functionality
 =============
@@ -43,6 +46,7 @@ Working
 * Audio (Builtin speakers, audio jack analog)
 * Webcam
 * Ethernet
+* Multitouch (using `mtrack`)
 * WiFi
 * Software Suspend
 * Display brightness control
@@ -52,7 +56,7 @@ Work in progress
 ----------------
 - The volume up / down buttons, which ought to trigger `XF86AudioLowerVolume` and `XF86AudioRaiseVolume`, don't even trigger scan/keycodes (`xev`), so I can't use them at all at the moment.
 - An unresolved problem is how to utilize the keyboard LED brightness keys. The only way I can currently configure the brightness is by writing to `/sys/`, which requires root priveleges. The only way I can think of is to handle the key events via the acpi handler (ie `/etc/acpi/handler.sh`), but these keys don't trigger acpi events!
-- Touchpad / Multitouch: It's currently quite twitchy. I haven't figured out a scheme for emulating the standard X resize method (CTRL+right-drag), since there is no right button. I'd also like to make the touchpad continue "following" a moving finger even when other fingers are present. Ie, if I rest one finger to the bottom left of the touchpad, and move my left finger as usual, I want the left finger to be ignored)
+- Touchpad / Multitouch: It's currently quite twitchy. I haven't figured out a scheme for emulating the standard X resize method (CTRL+right-drag), since there is no right button. 
 
 Untested
 --------
@@ -99,15 +103,37 @@ Post-Install
   This involves mounting your ESP, making a few paths, and copying a few files. Alternatively an autoinstaller exists on the same site, but I didn't use it.
 * Reboot into arch linux (rEFInd will present arch as an option now)
 * Temporarily connect an ethernet cable for a wired network connection
-* Start it up: `systemctl start dhcpcd` (note no enabling)
-* Get some packages we'll need for a graphical login, touchpad, wifi, audio, suspend, automounting: `pacman -Sy` `pacman -S` `devmon pmutils` `xorg-server` `xorg-server-utils` `xorg-apps` `xorg-xinit` `xorg-xev` `extra/xf86-video-intel` `extra/xf86-input-synaptics` `lightdm` `lightdm-gtk3-greeter` `wicd` `pulseaudio` `pulseaudio-alsa` `pavucontrol` `ttf-dejavu` `pekwm` `gvim`
-* Install yaourt, an AUR package manager: https://archlinux.fr/yaourt-en#get_it
-* Install proprietary wifi drivers via yaourt: `yaourt -S` `core/b43-fwcutter` `core/b43-firmware`
-* Enable (but don't start) wicd (network daemon): `systemctl enable wicd`
-* Edit `/etc/lightdm/lightdm.conf` so that `greeter-session` under `SeatDefaults` is set to `lightdm-gtk-greeter` (yes, *not* gtk3, but gtk)
-* Enable lightdm (graphical login manager): `systemctl enable lightdm`
+* Start it up 
+ *`systemctl start dhcpcd` (note no enabling)
+* Update the package database (to get updated paths)
+ * `pacman -Sy`
+* Install xorg basics
+ * `pacman -S` `xorg-server` `xorg-server-utils` `xorg-apps` `xorg-xinit` `xorg-xev` `extra/xf86-video-intel` `extra/xf86-input-synaptics` `ttf-dejavu`
+ * Note that we are not using `xf86-input-synaptics` later on, since we replace it with the unofficial `xf86-input-mtrack` later, to utilize more features of the trackpad
+* Install a grapical login manager, and enable it (but don't start it)
+ * `pacman -S` `lightdm` `lightdm-gtk3-greeter` 
+ * Edit `/etc/lightdm/lightdm.conf` so that `greeter-session` under `SeatDefaults` is set to `lightdm-gtk-greeter` (yes, *not* gtk3, but gtk)
+ * `systemctl enable lightdm`
+* Install the wicd network connection manager
+ * `pacman -S` `wicd` 
+* Enable it (but don't start it)
+ - `systemctl enable wicd`
+* Install pulseaudio...
+ * `pacman -S` `pulseaudio` `pulseaudio-alsa` `pavucontrol` 
+* And some miscellaneous stuff to ones own taste
+ * `pacman -S` `pekwm` `gvim` `devmon` `pmutils` 
+* Install yaourt, an AUR (Archlinux User Repository) package manager
+ * https://archlinux.fr/yaourt-en#get_it
+* Install proprietary wifi drivers via yaourt
+ - `yaourt -S` `core/b43-fwcutter` `core/b43-firmware`
+* Install the unofficial mtrack trackpad driver
+ - `yaourt -S` `xf86-input-mtrack-git`
 * Create a nonroot user
 * `reboot`
 * Login as your nonroot user, hopefully straight into pekwm
 * Configure your network from `wicd-gtk`
 * Unmute audio from `pavucontrol`
+* Install some post-fact configuration files, for keyboard and, more importantly, the mtrack touchpad driver 
+ * `cp -r <this git repository>/root/ /`
+ * This is of course optional but you should at least look in the `xorg.d/`..
+* `reboot`
