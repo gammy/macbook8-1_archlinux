@@ -3,9 +3,15 @@ Written in the hope that it might help someone else trying to run linux on the m
 
 Resources
 ---------
-- Partitioning / Pre-install: https://wiki.archlinux.org/index.php/MacBookPro8,1/8,2/8,3_%282011%29
-- Screen / Keyboard brightness: https://bbs.archlinux.org/viewtopic.php?id=105091
-- Touchpad: http://community.linuxmint.com/tutorial/view/1361, https://web.archive.org/web/20150210065444/http://uselessuseofcat.com/?p=74
+* Partitioning / Pre-install
+** https://wiki.archlinux.org/index.php/MacBookPro8,1/8,2/8,3_%282011%29
+
+* Screen / Keyboard brightness
+** https://bbs.archlinux.org/viewtopic.php?id=105091
+
+* Touchpad
+** http://community.linuxmint.com/tutorial/view/1361
+** https://web.archive.org/web/20150210065444/http://uselessuseofcat.com/?p=74
 
 Setup Goals
 -----------
@@ -58,7 +64,8 @@ My setup process, more or less
 * The normal installation procedure follows, except that we don't configure any bootstrapping at all(no GRUB, etc)
 * Use `gdisk` to add your partitions. I wanted a simple scheme with a root, swap and home partition.
 * Exit gdisk and perform your formatting / swap magic. For me, using btrfs and a swap, the end result:
-<code>[gammy@lucia ~]$ lsblk -f
+<pre><code>
+[gammy@lucia ~]$ lsblk -f
 NAME   FSTYPE  LABEL       UUID                                 MOUNTPOINT
 sda                                                             
 ├─sda1 vfat    EFI         70D6-1701                            
@@ -66,8 +73,8 @@ sda
 ├─sda3 hfsplus Recovery HD c7034e4c-d6e8-3dfc-af2b-008be1735b33 
 ├─sda4 swap                62dcdd3f-f6ee-4a00-9475-9c962cf602d6 [SWAP]
 ├─sda5 btrfs               09a733ec-3894-4b8b-b32f-7d63f2a0dd82 /
-└─sda6 btrfs               42a1f9fc-1c1b-4781-91f0-decec3ed51ce /home</code>
-
+└─sda6 btrfs               42a1f9fc-1c1b-4781-91f0-decec3ed51ce /home
+</code></pre>
 * Continued the install as usual (loadkeys, mount, swapon, pacstrap, arch-chroot, etc)
 * Reboot into OSX
 * Download rEFInd and install it on your pre-existing ESP (EFI Service Partition): http://www.rodsbooks.com/refind/installing.html#osx
