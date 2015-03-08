@@ -81,16 +81,15 @@ Pre-Install
 Install
 -------
 * The normal installation procedure follows, except that we don't configure any bootstrapping at all(no GRUB, etc)
-* Use `gdisk` to add your partitions. I wanted a simple scheme with a root, swap and home partition.
-* Exit gdisk and perform your formatting / swap magic. For me, using btrfs and a swap, the end result:
+* Use `gdisk` to add your partitions. I wanted a simple scheme with a root, swap and home partition:
 <pre><code>
 [gammy@lucia ~]$ lsblk -f
 NAME   FSTYPE  LABEL       UUID                                 MOUNTPOINT
 sda                                                             
 ├─sda1 vfat    EFI         70D6-1701                            
-├─sda2 hfsplus Untitled    18b62878-6a7b-3fa8-bbf7-d56a42fff1cf 
-├─sda3 hfsplus Recovery HD c7034e4c-d6e8-3dfc-af2b-008be1735b33 
-├─sda4 swap                62dcdd3f-f6ee-4a00-9475-9c962cf602d6 [SWAP]
+├─sda2 hfsplus Untitled    18b62878-6a7b-3fa8-bbf7-d56a42fff1cf         <- OS X
+├─sda3 hfsplus Recovery HD c7034e4c-d6e8-3dfc-af2b-008be1735b33         <- OS X Recovery 
+├─sda4 swap                62dcdd3f-f6ee-4a00-9475-9c962cf602d6 [SWAP] 
 ├─sda5 btrfs               09a733ec-3894-4b8b-b32f-7d63f2a0dd82 /
 └─sda6 btrfs               42a1f9fc-1c1b-4781-91f0-decec3ed51ce /home
 </code></pre>
@@ -109,16 +108,15 @@ Post-Install
  * `pacman -Sy`
 * Install xorg basics
  * `pacman -S` `xorg-server` `xorg-server-utils` `xorg-apps` `xorg-xinit` `xorg-xev` `extra/xf86-video-intel` `extra/xf86-input-synaptics` `ttf-dejavu`
- * Note that we are not using `xf86-input-synaptics` later on, since we replace it with the unofficial `xf86-input-mtrack` later, to utilize more features of the trackpad
+ * (Note that we optionally replace `xf86-input-synaptics` with the unofficial `xf86-input-mtrack` later, to utilize more features of the trackpad)
 * Install a grapical login manager, and enable it (but don't start it)
  * `pacman -S` `lightdm` `lightdm-gtk3-greeter` 
  * Edit `/etc/lightdm/lightdm.conf` so that `greeter-session` under `SeatDefaults` is set to `lightdm-gtk-greeter` (yes, *not* gtk3, but gtk)
  * `systemctl enable lightdm`
 * Install the wicd network connection manager
  * `pacman -S` `wicd` 
-* Enable it (but don't start it)
  - `systemctl enable wicd`
-* Install pulseaudio...
+* Install pulseaudio
  * `pacman -S` `pulseaudio` `pulseaudio-alsa` `pavucontrol` 
 * And some miscellaneous stuff to ones own taste
  * `pacman -S` `pekwm` `gvim` `devmon` `pmutils` 
@@ -131,9 +129,15 @@ Post-Install
 * Create a nonroot user
 * `reboot`
 * Login as your nonroot user, hopefully straight into pekwm
-* Configure your network from `wicd-gtk`
+* Configure your network from `wicd-gtk` to get online
 * Unmute audio from `pavucontrol`
-* Install some post-fact configuration files, for keyboard and, more importantly, the mtrack touchpad driver 
- * `cp -r <this git repository>/root/ /`
- * This is of course optional but you should at least look in the `xorg.d/`..
-* `reboot`
+* Copy configuration files from this repository to change mousepad and keyboard behavior, among other things (have a look at the configuration files and edit them first):
+<pre><code>
+pacman -S git
+cd /tmp/
+git clone https://github.com/gammy/macbook8-1_archlinux
+cd macbook8-1_archlinux
+sudo cp -r cfg/root/ / # BEWARE! Have a look at the configuration files first!
+reboot
+</code></pre>
+
