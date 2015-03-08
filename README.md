@@ -11,7 +11,6 @@ Resources
  - http://community.linuxmint.com/tutorial/view/1361
  - https://web.archive.org/web/20150210065444/http://uselessuseofcat.com/?p=74
  - https://github.com/BlueDragonX/xf86-input-mtrack
-
 * Uncategorized:
  - https://wiki.archlinux.org/index.php/MacBook
  - https://wiki.archlinux.org/index.php/MacBook#OS_X_with_Arch_Linux
@@ -69,6 +68,7 @@ Work in progress
 - The volume up / down buttons, which ought to trigger `XF86AudioLowerVolume` and `XF86AudioRaiseVolume`, don't even trigger scan/keycodes (`xev`), so I can't use them at all at the moment.
 - An unresolved problem is how to utilize the keyboard LED brightness keys. The only way I can currently configure the brightness is by writing to `/sys/`, which requires root priveleges. The only way I can think of is to handle the key events via the acpi handler (ie `/etc/acpi/handler.sh`), but these keys don't trigger acpi events!
 - Touchpad / Multitouch: It's not perfectly configured yet, but is almost there :)
+
 Untested
 --------
 - Thunderbolt...?
