@@ -13,6 +13,17 @@ Resources
 ** http://community.linuxmint.com/tutorial/view/1361
 ** https://web.archive.org/web/20150210065444/http://uselessuseofcat.com/?p=74
 
+* Uncategorized:
+** https://wiki.archlinux.org/index.php/MacBook
+** https://wiki.archlinux.org/index.php/MacBook#OS_X_with_Arch_Linux
+** https://wiki.archlinux.org/index.php/REFInd
+** https://bbs.archlinux.org/viewtopic.php?id=70170
+** https://wiki.archlinux.org/index.php/general_recommendations
+** https://wiki.archlinux.org/index.php/Broadcom_wireless#b43
+** https://wiki.archlinux.org/index.php/display_manager#Graphical
+** https://wiki.archlinux.org/index.php/LightDM
+** https://wiki.archlinux.org/index.php/UEFI
+
 Setup Goals
 -----------
 - Dual-boot the existing OS X installation alongside arch linux
@@ -82,7 +93,7 @@ sda
 * Reboot into arch linux (rEFInd will present arch as an option now)
 * Temporarily connect an ethernet cable for a wired network connection
 * Start it up: `systemctl start dhcpcd` (note no enabling)
-* Get some packages we'll need for a graphical login, touchpad, wifi, audio, suspend, automounting: `pacman -Sy` `pacman -S` `devmon pmutils` `xorg-server` `xorg-server-utils` `xorg-xinit` `xorg-xev` `extra/xf86-video-intel` `extra/xf86-input-synaptics` `lightdm` `lightdm-gtk3-greeter` `wicd` `pulseaudio` `pulseaudio-alsa` `pavucontrol` `ttf-dejavu` `pekwm` `gvim`
+* Get some packages we'll need for a graphical login, touchpad, wifi, audio, suspend, automounting: `pacman -Sy` `pacman -S` `devmon pmutils` `xorg-server` `xorg-server-utils` `xorg-apps` `xorg-xinit` `xorg-xev` `extra/xf86-video-intel` `extra/xf86-input-synaptics` `lightdm` `lightdm-gtk3-greeter` `wicd` `pulseaudio` `pulseaudio-alsa` `pavucontrol` `ttf-dejavu` `pekwm` `gvim`
 * Install yaourt, an AUR package manager: https://archlinux.fr/yaourt-en#get_it
 * Install proprietary wifi drivers via yaourt: `yaourt -S` `core/b43-fwcutter` `core/b43-firmware`
 * Enable (but don't start) wicd (network daemon): `systemctl enable wicd`
