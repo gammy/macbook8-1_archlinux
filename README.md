@@ -30,7 +30,7 @@ Setup Goals
 
 Where we Are
 ------------
-It works pretty well! Some things will need some minor tweaking, but it's perfectly usable! :)
+It works pretty well! Fact is, almost everything works straight out of the box without configuration. The wireless controller needs an experimental/proprietary driver (which we can install and use), and the mousepad has a lot of options to consider. The same goes with the keyboard. Some things will need tweaking, but that's what you get with all of this freedom :}
 
 Gotchas
 -------
