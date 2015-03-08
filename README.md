@@ -4,25 +4,25 @@ Written in the hope that it might help someone else trying to run linux on the m
 Resources
 ---------
 * Partitioning / Pre-install
-https://wiki.archlinux.org/index.php/MacBookPro8,1/8,2/8,3_%282011%29
+ - https://wiki.archlinux.org/index.php/MacBookPro8,1/8,2/8,3_%282011%29
 
 * Screen / Keyboard brightness
-https://bbs.archlinux.org/viewtopic.php?id=105091
+ - https://bbs.archlinux.org/viewtopic.php?id=105091
 
 * Touchpad
-http://community.linuxmint.com/tutorial/view/1361
-https://web.archive.org/web/20150210065444/http://uselessuseofcat.com/?p=74
+ - http://community.linuxmint.com/tutorial/view/1361
+ - https://web.archive.org/web/20150210065444/http://uselessuseofcat.com/?p=74
 
 * Uncategorized:
-https://wiki.archlinux.org/index.php/MacBook
-https://wiki.archlinux.org/index.php/MacBook#OS_X_with_Arch_Linux
-https://wiki.archlinux.org/index.php/REFInd
-https://bbs.archlinux.org/viewtopic.php?id=70170
-https://wiki.archlinux.org/index.php/general_recommendations
-https://wiki.archlinux.org/index.php/Broadcom_wireless#b43
-https://wiki.archlinux.org/index.php/display_manager#Graphical
-https://wiki.archlinux.org/index.php/LightDM
-https://wiki.archlinux.org/index.php/UEFI
+ - https://wiki.archlinux.org/index.php/MacBook
+ - https://wiki.archlinux.org/index.php/MacBook#OS_X_with_Arch_Linux
+ - https://wiki.archlinux.org/index.php/REFInd
+ - https://bbs.archlinux.org/viewtopic.php?id=70170
+ - https://wiki.archlinux.org/index.php/general_recommendations
+ - https://wiki.archlinux.org/index.php/Broadcom_wireless#b43
+ - https://wiki.archlinux.org/index.php/display_manager#Graphical
+ - https://wiki.archlinux.org/index.php/LightDM
+ - https://wiki.archlinux.org/index.php/UEFI
 
 Setup Goals
 -----------
