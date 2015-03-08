@@ -20,18 +20,22 @@ Resources
  - https://wiki.archlinux.org/index.php/display_manager#Graphical
  - https://wiki.archlinux.org/index.php/LightDM
  - https://wiki.archlinux.org/index.php/UEFI
+
 Setup Goals
 -----------
 - Dual-boot the existing OS X installation alongside arch linux
 - Install arch via Live USB stick and internet (wired; wireless might be problematic, see below)
 - For linux to run better than OS X itself
+
 Gotchas
 -------
 - With the base configuration described here, your touchpad will click on tap, right-click on triple-finger-tap, and paste on double-finger-tap
 - I won't delve *too* deep into making the environment look pretty here. Stuff like making the terminal colors nicer, mouse cursor, etc is left out for the mostpart
 - Some of my configuration can be found in `config/`, but remember that these might have become incompatible/outdated when you read this
+
 Functionality
 =============
+
 Working
 -------
 * Video
@@ -41,17 +45,21 @@ Working
 * Software Suspend
 * Display brightness control
 * Multimedia keys: the following work/identify correctly out of the box: `XF86MonBrightnessDown` `XF86MonBrightnessUp` `XF86LaunchA` `XF86LaunchB` `XF86KbdBrightnessUp` `XF86KbdBrightnessDown` `XF86AudioPrev` `XF86AudioPlay` `XF86AudioNext` `XF86AudioMute` `XF86Eject`. I bound some of these keys to scripts I've written. See http://github.com/gammy/misc-scripts.git
+
 Work in progress
 ----------------
 - The volume up / down buttons, which ought to trigger `XF86AudioLowerVolume` and `XF86AudioRaiseVolume`, don't even trigger scan/keycodes (`xev`), so I can't use them at all at the moment.
 - An unresolved problem is how to utilize the keyboard LED brightness keys. The only way I can currently configure the brightness is by writing to `/sys/`, which requires root priveleges. The only way I can think of is to handle the key events via the acpi handler (ie `/etc/acpi/handler.sh`), but these keys don't trigger acpi events!
 - Touchpad / Multitouch: It's currently quite twitchy. I haven't figured out a scheme for emulating the standard X resize method (CTRL+right-drag), since there is no right button. I'd also like to make the touchpad continue "following" a moving finger even when other fingers are present. Ie, if I rest one finger to the bottom left of the touchpad, and move my left finger as usual, I want the left finger to be ignored)
+
 Untested
 --------
 - Bluetooth
 - SPDIF audio 
+
 My setup process, more or less
 ==============================
+
 Pre-Install
 -----------
 * Prepare the USB Stick. I already had one lying around, but it's simple enough using `dd`.
@@ -63,12 +71,13 @@ Pre-Install
 * Insert the USB-stick, and then turn the mac on whilst holding down the ALT-key;
   - Once the disk boot menu pops up, select the USB stick and continue.
   - Once you've booted, you're dropped into a shell.
+
 Install
 -------
 * The normal installation procedure follows, except that we don't configure any bootstrapping at all(no GRUB, etc)
 * Use `gdisk` to add your partitions. I wanted a simple scheme with a root, swap and home partition.
 * Exit gdisk and perform your formatting / swap magic. For me, using btrfs and a swap, the end result:
-<code>
+<pre>
 [gammy@lucia ~]$ lsblk -f
 NAME   FSTYPE  LABEL       UUID                                 MOUNTPOINT
 sda                                                             
@@ -78,8 +87,9 @@ sda
 ├─sda4 swap                62dcdd3f-f6ee-4a00-9475-9c962cf602d6 [SWAP]
 ├─sda5 btrfs               09a733ec-3894-4b8b-b32f-7d63f2a0dd82 /
 └─sda6 btrfs               42a1f9fc-1c1b-4781-91f0-decec3ed51ce /home
-</code>
+</pre>
 * Continue the install as usual (`loadkeys`, `mount`, `swapon`, `pacstrap`, `arch-chroot`, `mkinicpio`, etc)
+
 Post-Install
 ------------
 * Reboot into OSX
