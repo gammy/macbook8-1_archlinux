@@ -30,7 +30,7 @@ Setup Goals
 
 Where we Are
 ------------
-It works, although there is a lot to tweak and configure. The touchpad is particularly iffy so far.
+It works pretty well! Some things will need some minor tweaking, but it's perfectly usable! :)
 
 Gotchas
 -------
