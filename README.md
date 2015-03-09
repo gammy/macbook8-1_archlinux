@@ -115,7 +115,7 @@ Post-Install
 * Reboot into arch linux (rEFInd will present arch as an option now)
 * Temporarily connect an ethernet cable for a wired network connection
 * Start it up 
- *`systemctl start dhcpcd` (note no enabling)
+ * `systemctl start dhcpcd` (note no enabling)
 * Update the package database (to get updated paths)
  * `pacman -Sy`
 * Install xorg basics
