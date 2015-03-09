@@ -1,26 +1,6 @@
 Archlinux on the Macbook Pro 8,1 (2011)
 =======================================
 Arch linux configuration and information for the macbook pro8,1 (2011). Written in the hope that it might help someone else trying to run linux on the macbook, and to help me remember.
-Resources
----------
-* Partitioning / Pre-install
- - https://wiki.archlinux.org/index.php/MacBookPro8,1/8,2/8,3_%282011%29
-* Screen / Keyboard brightness
- - https://bbs.archlinux.org/viewtopic.php?id=105091
-* Touchpad
- - http://community.linuxmint.com/tutorial/view/1361
- - https://web.archive.org/web/20150210065444/http://uselessuseofcat.com/?p=74
- - https://github.com/BlueDragonX/xf86-input-mtrack
-* Uncategorized:
- - https://wiki.archlinux.org/index.php/MacBook
- - https://wiki.archlinux.org/index.php/MacBook#OS_X_with_Arch_Linux
- - https://wiki.archlinux.org/index.php/REFInd
- - https://bbs.archlinux.org/viewtopic.php?id=70170
- - https://wiki.archlinux.org/index.php/general_recommendations
- - https://wiki.archlinux.org/index.php/Broadcom_wireless#b43
- - https://wiki.archlinux.org/index.php/display_manager#Graphical
- - https://wiki.archlinux.org/index.php/LightDM
- - https://wiki.archlinux.org/index.php/UEFI
 
 Setup Goals
 -----------
@@ -154,3 +134,23 @@ sudo cp -r cfg/root/ / # BEWARE! Have a look at the configuration files first!
 reboot
 </code></pre>
 
+Resources
+---------
+* Partitioning / Pre-install
+ - https://wiki.archlinux.org/index.php/MacBookPro8,1/8,2/8,3_%282011%29
+* Screen / Keyboard brightness
+ - https://bbs.archlinux.org/viewtopic.php?id=105091
+* Touchpad
+ - http://community.linuxmint.com/tutorial/view/1361
+ - https://web.archive.org/web/20150210065444/http://uselessuseofcat.com/?p=74
+ - https://github.com/BlueDragonX/xf86-input-mtrack
+* Uncategorized:
+ - https://wiki.archlinux.org/index.php/MacBook
+ - https://wiki.archlinux.org/index.php/MacBook#OS_X_with_Arch_Linux
+ - https://wiki.archlinux.org/index.php/REFInd
+ - https://bbs.archlinux.org/viewtopic.php?id=70170
+ - https://wiki.archlinux.org/index.php/general_recommendations
+ - https://wiki.archlinux.org/index.php/Broadcom_wireless#b43
+ - https://wiki.archlinux.org/index.php/display_manager#Graphical
+ - https://wiki.archlinux.org/index.php/LightDM
+ - https://wiki.archlinux.org/index.php/UEFI
