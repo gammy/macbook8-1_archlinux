@@ -40,12 +40,11 @@ Working
 * WiFi
 * Software Suspend
 * Display brightness control
-* Multimedia keys: the following work/identify correctly out of the box: `XF86MonBrightnessDown` `XF86MonBrightnessUp` `XF86LaunchA` `XF86LaunchB` `XF86KbdBrightnessUp` `XF86KbdBrightnessDown` `XF86AudioPrev` `XF86AudioPlay` `XF86AudioNext` `XF86AudioMute` `XF86Eject`. I bound some of these keys to scripts I've written. See http://github.com/gammy/misc-scripts.git
+* Multimedia keys: the following work/identify correctly out of the box: `XF86MonBrightnessDown` `XF86MonBrightnessUp` `XF86LaunchA` `XF86LaunchB` `XF86KbdBrightnessUp` `XF86KbdBrightnessDown` `XF86AudioPrev` `XF86AudioPlay` `XF86AudioNext` `XF86AudioMute` `XF86AudioLowerVolume` `XF86AudioRaiseVolume` `XF86Eject`. I bound some of these keys to scripts I've written. See http://github.com/gammy/misc-scripts.git
 - IR Remote (haven't verified all buttons though; up and down buttons seem special)
 
 Work in progress
 ----------------
-- The volume up / down buttons, which ought to trigger `XF86AudioLowerVolume` and `XF86AudioRaiseVolume`, don't even trigger scan/keycodes (`xev`), so I can't use them at all at the moment.
 - An unresolved problem is how to utilize the keyboard LED brightness keys. The only way I can currently configure the brightness is by writing to `/sys/`, which requires root priveleges. The only way I can think of is to handle the key events via the acpi handler (ie `/etc/acpi/handler.sh`), but these keys don't trigger acpi events!
 - Touchpad / Multitouch: It's not perfectly configured yet, but is almost there :)
 
@@ -53,7 +52,7 @@ Untested
 --------
 - Thunderbolt...?
 - Bluetooth
-- SPDIF audio 
+- SPDIF audio  (Probably works though, as the red LED is lit, and I can turn the light off by muting the SPDIF output via alsa)
 
 My setup process, more or less
 ==============================
