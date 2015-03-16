@@ -131,7 +131,7 @@ pacman -S git
 cd /tmp/
 git clone https://github.com/gammy/macbook8-1_archlinux
 cd macbook8-1_archlinux
-sudo cp -r cfg/root/ / # BEWARE! Have a look at the configuration files first!
+sudo cp -r cfg/root/\* / # BEWARE! Have a look at the configuration files first!
 systemctl enable powertop
 reboot
 </code></pre>
@@ -156,3 +156,4 @@ Resources
  - https://wiki.archlinux.org/index.php/display_manager#Graphical
  - https://wiki.archlinux.org/index.php/LightDM
  - https://wiki.archlinux.org/index.php/UEFI
+ - https://wiki.archlinux.org/index.php/powertop
