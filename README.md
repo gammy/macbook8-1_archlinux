@@ -111,7 +111,7 @@ Post-Install
 * Install pulseaudio
  * `pacman -S` `pulseaudio` `pulseaudio-alsa` `pavucontrol` 
 * And some miscellaneous stuff to ones own taste
- * `pacman -S` `pekwm` `gvim` `devmon` `pmutils` 
+ * `pacman -S` `pekwm` `gvim` `devmon` `pmutils` `powertop`
 * Install yaourt, an AUR (Archlinux User Repository) package manager
  * https://archlinux.fr/yaourt-en#get_it
 * Install proprietary wifi drivers via yaourt
@@ -123,6 +123,8 @@ Post-Install
 * Login as your nonroot user, hopefully straight into pekwm
 * Configure your network from `wicd-gtk` to get online
 * Unmute audio from `pavucontrol`
+* Unplug the mains and run powertop (optionally installed earlier) in calibration mode as root. Leave the computer alone durig this process
+ - `powertop --calibrate`
 * Copy configuration files from this repository to change mousepad and keyboard behavior, among other things (have a look at the configuration files and edit them first):
 <pre><code>
 pacman -S git
@@ -130,6 +132,7 @@ cd /tmp/
 git clone https://github.com/gammy/macbook8-1_archlinux
 cd macbook8-1_archlinux
 sudo cp -r cfg/root/ / # BEWARE! Have a look at the configuration files first!
+systemctl enable powertop
 reboot
 </code></pre>
 
