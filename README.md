@@ -98,7 +98,7 @@ Post-Install
 * Update the package database (to get updated paths)
  * `pacman -Sy`
 * Install xorg basics
- * `pacman -S` `xorg-server` `xorg-server-utils` `xorg-apps` `xorg-xinit` `xorg-xev` `extra/xf86-video-intel` `extra/xf86-input-synaptics` `ttf-dejavu`
+ * `pacman -S` `xorg-server` `xorg-server-utils` `xorg-apps` `xorg-xinit` `xorg-xev` `xf86-video-intel` `xf86-input-synaptics` `ttf-dejavu`
  * (Note that we optionally replace `xf86-input-synaptics` with the unofficial `xf86-input-mtrack` later, to utilize more features of the trackpad)
 * Install a grapical login manager
  * `pacman -S` `lightdm` `lightdm-gtk3-greeter` 
@@ -138,6 +138,8 @@ reboot
 
 Resources
 ---------
+* WiFi
+ - https://bbs.archlinux.org/viewtopic.php?id=192287&p=5
 * Partitioning / Pre-install
  - https://wiki.archlinux.org/index.php/MacBookPro8,1/8,2/8,3_%282011%29
 * Screen / Keyboard brightness
