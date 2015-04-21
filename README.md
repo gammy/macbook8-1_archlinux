@@ -101,9 +101,9 @@ Post-Install
  * `pacman -S` `xorg-server` `xorg-server-utils` `xorg-apps` `xorg-xinit` `xorg-xev` `xf86-video-intel` `xf86-input-synaptics` `ttf-dejavu`
  * (Note that we optionally replace `xf86-input-synaptics` with the unofficial `xf86-input-mtrack` later, to utilize more features of the trackpad)
 * Install a grapical login manager
- * `pacman -S` `lightdm` `lightdm-gtk3-greeter` 
+ * `pacman -S` `lightdm` `lightdm-gtk-greeter` 
  * `systemctl enable lightdm`
- * Edit `/etc/lightdm/lightdm.conf` so that `greeter-session` under `SeatDefaults` is set to `lightdm-gtk-greeter` (yes, *not* gtk3, but gtk)
+ * Edit `/etc/lightdm/lightdm.conf` so that `greeter-session` under `SeatDefaults` is set to `lightdm-gtk-greeter`
 * Install the wicd network connection manager
  * `pacman -S` `wicd` 
  - `systemctl enable wicd`
