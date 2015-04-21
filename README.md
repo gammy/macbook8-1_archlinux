@@ -110,10 +110,12 @@ Post-Install
  - (Usually you can configure the network here by running `wicd-curses`, but it crashes when I select a network to configure. Maybe the experimental b43 driver does not provide something which wicd-curses wants - something which wicd-gtk handles, however..)
 * Install pulseaudio
  * `pacman -S` `pulseaudio` `pulseaudio-alsa` `pavucontrol` 
+* ACPI (for suspend on lid-close, etc)
+ * `pacman -S` `acpid` `acpi`
 * And some miscellaneous stuff to ones own taste
  * `pacman -S` `pekwm` `gvim` `devmon` `pmutils` `powertop`
 * Install yaourt, an AUR (Archlinux User Repository) package manager
- * https://archlinux.fr/yaourt-en#get_it
+ * https://archlinux.fr/yaourt-en#get_it (The simplest and best way is to add their repository)
 * Install proprietary wifi drivers via yaourt
  - `yaourt -S` `core/b43-fwcutter` `core/b43-firmware`
 * Install the unofficial mtrack trackpad driver
