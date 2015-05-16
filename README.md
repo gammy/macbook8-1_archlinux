@@ -113,7 +113,7 @@ Post-Install
 * ACPI (for suspend on lid-close, etc)
  * `pacman -S` `acpid` `acpi`
 * And some miscellaneous stuff to ones own taste
- * `pacman -S` `pekwm` `gvim` `devmon` `pmutils` `powertop`
+ * `pacman -S` `pekwm` `gvim` `devmon` `pm-utils` `powertop`
 * Install yaourt, an AUR (Archlinux User Repository) package manager
  * https://archlinux.fr/yaourt-en#get_it (The simplest and best way is to add their repository)
 * Install proprietary wifi drivers via yaourt
