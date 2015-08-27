@@ -12,6 +12,8 @@ Where we Are
 ------------
 It works pretty well! Fact is, almost everything works straight out of the box without configuration. The wireless controller needs an experimental/proprietary driver (which we can install and use), and the mousepad has a lot of options to consider. The same goes with the keyboard. Some things will need tweaking, but that's what you get with all of this freedom :}
 
+Addendum: I am having continued trouble with the wifi. I'm ill while writing this, and I can't be bothered to add links or details. But generally, all drivers I have tried work poorly; crashing (just the driver) and/or randomly disconnecting. I've become really fed up with this, and have purchased a D-link DWA-171 "Wireless AC Dual-Band Nano USB Adapter". It works well even at a fair distance. I'm using the rtl8812au driver: https://github.com/gnab/rtl8812au
+
 Gotchas
 -------
 - With the base configuration described here, your touchpad will click on tap, right-click on triple-finger-tap, and paste on double-finger-tap. After `xf86-input-mtrack` is installed however, this is the configuration
